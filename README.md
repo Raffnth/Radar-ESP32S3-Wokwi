@@ -12,7 +12,7 @@ Simulasi radar mini dengan ESP32-S3, servo, sensor HC-SR04, dan OLED SSD1306. Se
 
 ## Cara Menjalankan
 
-1. Buka project Wokwi: (tempel link di sini)
+1. Buka project Wokwi: wokwi.com/projects/479177463683247105
 2. Klik **Start** dan tunggu compile.
 3. Klik HC-SR04, lalu geser slider **Distance** (di bawah 100 cm) untuk memunculkan titik objek.
 

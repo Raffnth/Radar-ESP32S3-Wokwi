@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Raffi",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -150,
+      "left": -190,
+      "attrs": { "distance": "22" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": -130,
+      "left": 130,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 60, "left": 170, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:8", "oled1:SDA", "green", [ "h30", "v-60" ] ],
+    [ "esp:9", "oled1:SCL", "blue", [ "h40", "v-70" ] ],
+    [ "esp:3V3.1", "oled1:VCC", "red", [ "h-20", "v-90", "h200" ] ],
+    [ "esp:GND.1", "oled1:GND", "black", [ "h50", "v-80" ] ],
+    [ "esp:4", "servo1:PWM", "orange", [ "h-30", "v60", "h200" ] ],
+    [ "esp:5V", "servo1:V+", "red", [ "h-40", "v70", "h210" ] ],
+    [ "esp:GND.1", "servo1:GND", "black", [ "h60", "v30" ] ],
+    [ "esp:5", "ultrasonic1:TRIG", "purple", [ "h-30", "v-40" ] ],
+    [ "esp:6", "ultrasonic1:ECHO", "gray", [ "h-40", "v-50" ] ],
+    [ "esp:5V", "ultrasonic1:VCC", "red", [ "h-50", "v-60" ] ],
+    [ "esp:GND.1", "ultrasonic1:GND", "black", [ "h-60", "v-70" ] ]
+  ],
+  "dependencies": {}
+}
